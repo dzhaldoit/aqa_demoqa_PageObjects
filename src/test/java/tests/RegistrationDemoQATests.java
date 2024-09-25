@@ -23,7 +23,9 @@ public class RegistrationDemoQATests extends TestBase {
                 currentAddress = "Vladimirskiy, Central 12/3",
                 state = "Haryana", city = "Panipat";
 
-        registrationPage.openPage()
+        registrationPage
+                .openPage()
+                .removeBanners()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
@@ -58,7 +60,9 @@ public class RegistrationDemoQATests extends TestBase {
         String gender = "Male";
         String phoneNumber = "8999665533";
 
-        registrationPage.openPage()
+        registrationPage
+                .openPage()
+                .removeBanners()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setGender(gender)
@@ -73,7 +77,9 @@ public class RegistrationDemoQATests extends TestBase {
 
     @Test
     void negativeRegistrationTest() {
-        registrationPage.openPage().clickSubmit();
+        registrationPage.openPage();
+        registrationPage.removeBanners();
+        registrationPage.clickSubmit();
 
         registrationPage.negativeCheck();
     }
