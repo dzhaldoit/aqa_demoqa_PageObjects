@@ -35,8 +35,8 @@ public class RegistrationDemoQATests extends TestBase {
                 .setPicture(picName)
                 .setCurrentAddress(currentAddress)
                 .setState(state)
-                .setCity(city)
-                .clickSubmit();
+                .setCity(city);
+        registrationPage.clickSubmit();
 
         registrationPage
                 .checkResult("Student Name", firstName + " " + lastName)
@@ -52,7 +52,7 @@ public class RegistrationDemoQATests extends TestBase {
     }
 
     @Test
-    void registrationFieldsTest() {
+    void successfulRegistrationWithMinDataTest() {
         String firstName = "Mihail";
         String lastName = "Zubenko";
         String gender = "Male";
@@ -62,8 +62,8 @@ public class RegistrationDemoQATests extends TestBase {
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setGender(gender)
-                .setUserNumber(phoneNumber)
-                .clickSubmit();
+                .setUserNumber(phoneNumber);
+        registrationPage.clickSubmit();
 
         registrationPage
                 .checkResult("Student Name", firstName + " " + lastName)
