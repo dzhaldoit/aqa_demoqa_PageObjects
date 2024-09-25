@@ -23,32 +23,31 @@ public class RegistrationDemoQATests extends TestBase {
                 currentAddress = "Vladimirskiy, Central 12/3",
                 state = "Haryana", city = "Panipat";
 
-        registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setUserEmail(userEmail)
-                .setGender(gender)
-                .setUserNumber(phoneNumber)
-                .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .setSubjects(subjects)
-                .setHobbies(hobbies)
-                .setPicture(picName)
-                .setCurrentAddress(currentAddress)
-                .setState(state)
-                .setCity(city);
+        registrationPage.openPage();
+        registrationPage.setFirstName(firstName);
+        registrationPage.setLastName(lastName);
+        registrationPage.setUserEmail(userEmail);
+        registrationPage.setGender(gender);
+        registrationPage.setUserNumber(phoneNumber);
+        registrationPage.setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth);
+        registrationPage.setSubjects(subjects);
+        registrationPage.setHobbies(hobbies);
+        registrationPage.setPicture(picName);
+        registrationPage.setCurrentAddress(currentAddress);
+        registrationPage.setState(state);
+        registrationPage.setCity(city);
         registrationPage.clickSubmit();
 
-        registrationPage
-                .checkResult("Student Name", firstName + " " + lastName)
-                .checkResult("Student Email", userEmail)
-                .checkResult("Gender", gender)
-                .checkResult("Mobile", phoneNumber)
-                .checkResult("Date of Birth",dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
-                .checkResult("Subjects", subjects)
-                .checkResult("Hobbies", hobbies)
-                .checkResult("Picture", picName)
-                .checkResult("Address", currentAddress)
-                .checkResult("State and City", state + " " + city);
+        registrationPage.checkResult("Student Name", firstName + " " + lastName);
+        registrationPage.checkResult("Student Email", userEmail);
+        registrationPage.checkResult("Gender", gender);
+        registrationPage.checkResult("Mobile", phoneNumber);
+        registrationPage.checkResult("Date of Birth",dayOfBirth + " " + monthOfBirth + "," + yearOfBirth);
+        registrationPage.checkResult("Subjects", subjects);
+        registrationPage.checkResult("Hobbies", hobbies);
+        registrationPage.checkResult("Picture", picName);
+        registrationPage.checkResult("Address", currentAddress);
+        registrationPage.checkResult("State and City", state + " " + city);
     }
 
     @Test
@@ -58,17 +57,16 @@ public class RegistrationDemoQATests extends TestBase {
         String gender = "Male";
         String phoneNumber = "8999665533";
 
-        registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setGender(gender)
-                .setUserNumber(phoneNumber);
+        registrationPage.openPage();
+        registrationPage.setFirstName(firstName);
+        registrationPage.setLastName(lastName);
+        registrationPage.setGender(gender);
+        registrationPage.setUserNumber(phoneNumber);
         registrationPage.clickSubmit();
 
-        registrationPage
-                .checkResult("Student Name", firstName + " " + lastName)
-                .checkResult("Gender", gender)
-                .checkResult("Mobile", phoneNumber);
+        registrationPage.checkResult("Student Name", firstName + " " + lastName);
+        registrationPage.checkResult("Gender", gender);
+        registrationPage.checkResult("Mobile", phoneNumber);
     }
 
     @Test
