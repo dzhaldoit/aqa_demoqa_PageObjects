@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
 
@@ -14,8 +15,8 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
     }
 
-    @AfterAll
-    static void cleanDB() {
+    @BeforeEach
+    void closeDriver() {
         WebDriverRunner.closeWindow();
     }
 }
